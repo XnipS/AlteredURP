@@ -81,7 +81,11 @@ namespace UnityEngine.Experimental.Rendering.Universal
         {
             return m_ApplyToSortingLayers != null ? Array.IndexOf(m_ApplyToSortingLayers, layer) >= 0 : false;
         }
-
+        
+        private Vector3 vec2To3(Vector2 inputVector) {
+    return new Vector3(inputVector.x, inputVector.y, 0);
+}
+        
         private void Awake() {
             if(m_ApplyToSortingLayers == null)
                 m_ApplyToSortingLayers = SetDefaultSortingLayers();
